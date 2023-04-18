@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using System.Globalization
+@using AirQuality.Business.Extensions;
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model AirQualityModel
+
+<div class="main">
+    <h1>Check Air Quality</h1>
+    <div class="search">
+        <form method="post" class="find-location">
+            <input type="text" name="city" value="@(Model.City ?? string.Empty)" placeholder="Enter a city... ">
+            <input type="submit" value="Find">
+        </form>
+    </div>
+</div>
+
+@if (Model != null && Model.Locations != null && Model.Locations.Count != 0)
+{
+    <div id="content">
+        @foreach (var location in Model.Locations)
+        {
+            <div class="@location.AirQualityLevel.ToString().ToLower()">
+                <div class="header">
+                    <p class="aqiImpact">@location.AirQualityLevel.GetDisplayName()</p>
+                </div>
+                <div class="cont">
+                    <p class="city">  @location.City @(!string.IsNullOrEmpty(location.Country) ? $"({location.Country})" : string.Empty)</p>
+                    @if (!string.IsNullOrEmpty(location.Name) && !location.Name.Equals(location.City))
+                    {
+                        <p class="city">@location.Name</p>
+                    }
+                    @if (!string.IsNullOrEmpty(location.LastUpdated))
+                    {
+                        <p> Last Updated On : @location.LastUpdated </p>
+                    } 
+                </div>
+                <div id="content">
+                    @foreach (var pollutant in location.Pollutants)
+                    {
+                        <div class="@pollutant.AirQualityLevel.ToString().ToLower()">
+                            <div class="header">
+                                <p class="aqiImpact">@pollutant.AirQualityLevel</p>
+                            </div>
+                            <div class="cont">
+                                 <p>@pollutant.DisplayName</p>
+                                 <p>@(string.Format("{0:0.##}", pollutant.Average)) @pollutant.Unit</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <div class="header">
+        <h1> No Result Found</h1>
+    </div>
+}

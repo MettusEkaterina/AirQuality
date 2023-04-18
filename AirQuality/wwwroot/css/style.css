@@ -1,0 +1,138 @@
+﻿body {
+  padding-top: 20vh;
+  background-color: #f2f0f5;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#content {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+}
+
+.header {
+  align-items: center;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+.cont {
+  align-items: center;
+  padding-left: 5em;
+  padding-right: 5em;
+}
+
+  .cont p {
+    line-height: 1em;
+    font-weight: 400;
+  }
+
+.aqi_index {
+  font-size: 4em;
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Product Sans";
+  src: local("Open Sans"), local("OpenSans"), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format("woff2");
+}
+
+p.city {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+p.aqiImpact {
+  font-size: 2em;
+  font-weight: bold;
+  align-items: center;
+}
+
+.good {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #52b947;
+  color: #000000;
+  border-color: #52b947;
+}
+
+.moderate {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #f3ec19;
+  color: #000000;
+  border-color: #f3ec19;
+}
+
+.unhealthyforsensitive {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #f57e20;
+  color: #ffffff;
+  border-color: #f57e20;
+}
+
+.unhealthy {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #ed1d24;
+  color: #ffffff;
+  border-color: #ed1d24;
+}
+
+.veryunhealthy {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #7e2b7d;
+  color: #ffffff;
+  border-color: #7e2b7d;
+}
+
+.hazardous {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #480d27;
+  color: #ffffff;
+  border-color: #480d27;
+}
+
+.unknown {
+  margin-top: 2em;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color: #ebebeb;
+  color: #000000;
+  border-color: #ebebeb;
+}
+
+.find-location {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+  .find-location input[type="text"] {
+    width: 100%;
+    padding: 20px 50px 20px 20px;
+  }
+
+  .find-location input[type="submit"] {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    bottom: 5px;
+    padding: 0 40px;
+  }
